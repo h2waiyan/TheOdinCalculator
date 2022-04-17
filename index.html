@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scrpit.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="myDisplay">
+            <div>
+                <span id="fistNum" class="result"> 0 </span>
+                <span id="operator" class="result"> </span>
+                <span id="secondNum" class="result"> </span>
+                <span id="result" class="result"> </span>
+            </div>
+        </div>
+
+        <div class="numpad">
+            <div class="row">
+                <button class="myNumber" value="7" onclick="numClick(value)"> 7</button>
+                <button class="myNumber" value="8" onclick="numClick(value)"> 8 </button>
+                <button class="myNumber" value="9" onclick="numClick(value)"> 9 </button>
+                <button class="myNumber" value="+" onclick="operatorClick(value)"> + </button>
+            </div>
+
+            <div class="row">
+                <button class="myNumber" value="4" onclick="numClick(value)"> 4 </button>
+                <button class="myNumber" value="5" onclick="numClick(value)"> 5 </button>
+                <button class="myNumber" value="6" onclick="numClick(value)"> 6 </button>
+                <button class="myNumber" value="-" onclick="operatorClick(value)"> - </button>
+
+            </div>
+
+            <div class="row">
+                <button class="myNumber" value="1" onclick="numClick(value)"> 1 </button>
+                <button class="myNumber" value="2" onclick="numClick(value)"> 2 </button>
+                <button class="myNumber" value="3" onclick="numClick(value)"> 3 </button>
+                <button class="myNumber" value="x" onclick="operatorClick(value)"> x </button>
+            </div>
+
+            <div class="row">
+                <button class="myNumber" value="0" onclick="numClick(value)"> 0 </button>
+                <button class="myNumber" value="." onclick="numClick(value)"> . </button>
+                <button class="myNumber" value="/" onclick="operatorClick(value)"> / </button>
+                <button class="myNumber" value="=" onclick="answerClick()"> = </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
