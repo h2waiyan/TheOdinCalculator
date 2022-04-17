@@ -3,25 +3,38 @@ let secondNum;
 let operator = "";
 let result;
 
-let firstNumTemp = "";
-let secondNumTemp = "";
+let firstNumTemp = "0";
+let secondNumTemp = "0";
+
 
 
 function numClick(value) {
-    if (operator == ""){
-        if (firstNumTemp == ""){
-            if (value == "0"){
+    if (operator == "") {
+        if (firstNumTemp == "0") {
+            if (value == "0") {
+                return;
+            }
+            
+        }
+        if (firstNumTemp.includes(".")) {
+            if (value == ".") {
                 return;
             }
         }
         firstNumTemp = firstNumTemp + value;
-        document.getElementById("fistNum").innerHTML = firstNumTemp;   
+        document.getElementById("fistNum").innerHTML = firstNumTemp;
     }
 
-    if (operator != ""){
-        firstNum =  parseFloat(firstNumTemp);
-        if (secondNumTemp == ""){
-            if (value == "0"){
+    if (operator != "") {
+        firstNum = parseFloat(firstNumTemp);
+        if (secondNumTemp == "0") {
+            if (value == "0") {
+                return;
+            }
+
+        }
+        if (secondNumTemp.includes(".")) {
+            if (value == ".") {
                 return;
             }
         }
@@ -36,7 +49,7 @@ function operatorClick(value) {
 }
 
 function answerClick() {
-    secondNum =  parseFloat(secondNumTemp);
+    secondNum = parseFloat(secondNumTemp);
 
     if (operator == "+") {
         result = firstNum + secondNum;
@@ -45,7 +58,7 @@ function answerClick() {
         result = firstNum - secondNum;
     }
     else if (operator == "x") {
-        result =  firstNum * secondNum;
+        result = firstNum * secondNum;
     }
     else if (operator == "/") {
         result = firstNum / secondNum;
@@ -54,5 +67,22 @@ function answerClick() {
         result = firstNum + secondNum;
     }
 
-    document.getElementById("result").innerHTML = " = "+ result;
+    document.getElementById("result").innerHTML = " = " + result;
+}
+
+function clearClick() {
+    firstNum = "";
+    firstNumTemp = "";
+    secondNum = "";
+    secondNumTemp = "";
+    operator = "";
+    result = "";
+
+    console.log(operator);
+
+    document.getElementById("fistNum").innerHTML = "0";
+    document.getElementById("operator").innerHTML = operator;
+    document.getElementById("secondNum").innerHTML = secondNum;
+    document.getElementById("result").innerHTML = result;
+
 }
