@@ -6,9 +6,12 @@ let result;
 let firstNumTemp = "";
 let secondNumTemp = "";
 
-
-
 function numClick(value) {
+    
+    if (firstNum != "" && secondNum != "" && result != ""){
+        clearClick();
+    }
+
     if (operator == "") {
         if (firstNumTemp == "") {
             if (value == "0") {
@@ -52,8 +55,9 @@ function numClick(value) {
         secondNumTemp = secondNumTemp + value;
         document.getElementById("secondNum").innerHTML = secondNumTemp;
         secondNum = parseFloat(secondNumTemp);
-
     }
+
+    
 }
 
 function operatorClick(value) {
@@ -96,7 +100,6 @@ function answerClick() {
         return;
     }
     
-
     if (operator == "+") {
         result = firstNum + secondNum;
     }
@@ -129,11 +132,22 @@ function clearClick() {
     operator = "";
     result = "";
 
-    console.log(operator);
-
     document.getElementById("fistNum").innerHTML = "0";
     document.getElementById("operator").innerHTML = operator;
     document.getElementById("secondNum").innerHTML = secondNum;
     document.getElementById("result").innerHTML = result;
 
+}
+
+function deleteClick(){
+    if (operator == "") {
+    firstNumTemp = firstNumTemp.slice(0, -1)
+    document.getElementById("fistNum").innerHTML = firstNumTemp;
+    }
+
+    if (operator != "") {
+        secondNumTemp = secondNumTemp.slice(0, -1);
+        secondNum = parseFloat(secondNumTemp);
+        document.getElementById("secondNum").innerHTML = secondNumTemp;
+    }
 }
